@@ -1,4 +1,4 @@
-set (AASDK_DIR ~/aasdk)
+set (AASDK_DIR ~/opendash-project/aasdk)
 
 find_path(AASDK_INCLUDE_DIR
     aasdk/Version.hpp
@@ -9,6 +9,7 @@ find_path(AASDK_INCLUDE_DIR
 find_path(AASDK_PROTO_INCLUDE_DIR
     aasdk_proto/AbsoluteInputEventData.pb.h
     PATHS ${AASDK_DIR}
+    PATH_SUFFIXES build
 )
 
 find_path(AASDK_LIB_DIR
@@ -16,6 +17,11 @@ find_path(AASDK_LIB_DIR
     PATHS ${AASDK_DIR}
     PATH_SUFFIXES lib
 )
+
+message(STATUS "Found aasdk:")
+        message(STATUS " - Includes: ${AASDK_INCLUDE_DIR}")
+        message(STATUS " - Includes: ${AASDK_PROTO_INCLUDE_DIR}")
+        message(STATUS " - Libraries: ${AASDK_LIB_DIR}")
 
 if (AASDK_INCLUDE_DIR AND AASDK_PROTO_INCLUDE_DIR AND AASDK_LIB_DIR)
     set(AASDK_FOUND TRUE)
