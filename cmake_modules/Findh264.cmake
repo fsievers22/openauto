@@ -1,5 +1,5 @@
-set (H264_INCLUDE_DIR /usr/local/include/h264bitstream)
-set (H264_LIB_DIR /usr/local/lib)
+set (H264_INCLUDE_DIR ~/opendash-project/h264bitstream)
+set (H264_LIB_DIR ~/opendash-project/h264bitstream/.libs)
 
 set(H264_FOUND TRUE)
   
